@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "HTTPService.h"
+#import "Video.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *videoList;
 
 @end
 
@@ -24,12 +26,31 @@
     
     [[HTTPService instance] getTutorials: ^(NSArray *_Nullable dataArray, NSString * _Nullable errMessage) {
         if (dataArray) {
+            
+            NSMutableArray *arr = [[NSMutableArray alloc]init];
+            
+            for (NSDictionary *d in dataArray) {
+                
+                Video *vid = [[Video init] alloc];
+                vid.videoTitle = [d objectForKey: @"title"];
+                vid.videoDescription = [d objectForKey: @"description"];
+                vid.thumbnailUrl = [d objectForKey:@"thumbnail"];
+                vid.videoIframe = [d objectForKey: @"iframe"];
+                
+                [arr addObject: vid];
+            }
+            
+            self.videoList =  arr;
+            [self updateTableData];
             NSLog(@"Dictionary %@", dataArray.debugDescription);
         } else if (errMessage) {
         }
     }];
 }
-
+-(void) updateTableData {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData]; });
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
