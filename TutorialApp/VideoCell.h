@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VideoCell.h
 //  TutorialApp
 //
 //  Created by Alfredo M. on 4/1/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController < UITableViewDataSource, UITableViewDelegate>
-
+@interface VideoCell : UITableViewCell
 
 @end
-

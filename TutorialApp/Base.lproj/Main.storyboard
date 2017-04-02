@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1T-RI-ltN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Bh-XB-24N">
+                                <rect key="frame" x="16" y="39" width="343" height="628"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="112" id="0Sk-8f-UTn" customClass="VideoCell">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Sk-8f-UTn" id="I2e-jv-gRA">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1v-Bp-Gi2">
+                                                    <rect key="frame" x="8" y="8" width="327" height="96"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n72-mC-BB9">
+                                                            <rect key="frame" x="8" y="16" width="112" height="64"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="112" id="jMg-JU-lIt"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how to install Android Studio and then go through this tutorial." lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="NTu-nv-nkj">
+                                                            <rect key="frame" x="128" y="16" width="191" height="33"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how to install Android Studio and then go through this tutorial." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivC-WV-aM9">
+                                                            <rect key="frame" x="128" y="57" width="191" height="31"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="31" id="pz7-Nk-saF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ivC-WV-aM9" firstAttribute="leading" secondItem="n72-mC-BB9" secondAttribute="trailing" constant="8" id="ODt-v7-tgl"/>
+                                                        <constraint firstItem="NTu-nv-nkj" firstAttribute="top" secondItem="e1v-Bp-Gi2" secondAttribute="top" constant="16" id="WED-ph-8Vk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ivC-WV-aM9" secondAttribute="trailing" constant="8" id="YSy-Zr-qgr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="n72-mC-BB9" secondAttribute="bottom" constant="16" id="ZIl-i6-LCj"/>
+                                                        <constraint firstItem="n72-mC-BB9" firstAttribute="top" secondItem="e1v-Bp-Gi2" secondAttribute="top" constant="16" id="aO8-r5-4PP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NTu-nv-nkj" secondAttribute="trailing" constant="8" id="aXM-sm-MFe"/>
+                                                        <constraint firstItem="NTu-nv-nkj" firstAttribute="leading" secondItem="n72-mC-BB9" secondAttribute="trailing" constant="8" id="eFQ-JM-ErO"/>
+                                                        <constraint firstItem="ivC-WV-aM9" firstAttribute="top" secondItem="NTu-nv-nkj" secondAttribute="bottom" constant="8" id="n42-Oz-afV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ivC-WV-aM9" secondAttribute="bottom" constant="8" id="qAy-fO-plc"/>
+                                                        <constraint firstItem="n72-mC-BB9" firstAttribute="leading" secondItem="e1v-Bp-Gi2" secondAttribute="leading" constant="8" id="sB4-XL-Mat"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="e1v-Bp-Gi2" firstAttribute="leading" secondItem="I2e-jv-gRA" secondAttribute="leading" constant="8" id="GJj-oU-aCU"/>
+                                                <constraint firstAttribute="trailing" secondItem="e1v-Bp-Gi2" secondAttribute="trailing" constant="8" id="Hbl-nw-HWn"/>
+                                                <constraint firstAttribute="bottom" secondItem="e1v-Bp-Gi2" secondAttribute="bottom" constant="8" id="cQG-Fm-H2n"/>
+                                                <constraint firstItem="e1v-Bp-Gi2" firstAttribute="top" secondItem="I2e-jv-gRA" secondAttribute="top" constant="8" id="rbe-Nk-Q3w"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="e1v-Bp-Gi2" id="qqb-hZ-2Gy"/>
+                                            <outlet property="descriptionLbl" destination="ivC-WV-aM9" id="fav-4V-gc7"/>
+                                            <outlet property="thumbImg" destination="n72-mC-BB9" id="ll5-lm-Ro3"/>
+                                            <outlet property="titleLbl" destination="NTu-nv-nkj" id="Nsn-LO-EdL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Bh-XB-24N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Zl-3E-Bha"/>
+                            <constraint firstItem="5Bh-XB-24N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="L5M-Ac-x76"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Bh-XB-24N" secondAttribute="bottom" id="Lpe-N9-cne"/>
+                            <constraint firstItem="5Bh-XB-24N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="POw-Oz-OHB"/>
+                            <constraint firstItem="S1T-RI-ltN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q0l-PE-FbB"/>
+                            <constraint firstAttribute="trailing" secondItem="S1T-RI-ltN" secondAttribute="trailing" id="nOt-Zu-Evm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S1T-RI-ltN" secondAttribute="bottom" constant="584" id="oKO-NM-3eB"/>
+                            <constraint firstItem="S1T-RI-ltN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xFc-ZL-Atj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="5Bh-XB-24N" id="vv3-ol-SCZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
