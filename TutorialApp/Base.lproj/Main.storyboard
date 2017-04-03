@@ -111,7 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="5Bh-XB-24N" id="vv3-ol-SCZ"/>
-                        <segue destination="B1M-Nv-R2y" kind="presentation" id="bkl-1r-VFA"/>
+                        <segue destination="B1M-Nv-R2y" kind="presentation" identifier="videoVC" id="bkl-1r-VFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,6 +166,9 @@
                                 <state key="normal" title="DONE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="B1M-Nv-R2y" eventType="touchUpInside" id="1gl-ip-NJi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -184,6 +187,11 @@
                             <constraint firstItem="Oxr-7A-dro" firstAttribute="top" secondItem="kaP-IA-9PX" secondAttribute="top" id="y73-Qx-gRH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLbl" destination="Z1q-qa-nZH" id="Rlm-3E-XtD"/>
+                        <outlet property="titleLbl" destination="oQJ-84-I2t" id="k1L-Ky-vtX"/>
+                        <outlet property="webView" destination="Oxr-7A-dro" id="K8L-ie-bBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="510-ak-59x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
