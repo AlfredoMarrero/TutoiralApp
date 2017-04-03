@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HTTPService.h"
 #import "Video.h"
+#import "VideoCell.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,7 +32,7 @@
             
             for (NSDictionary *d in dataArray) {
                 
-                Video *vid = [[Video init] alloc];
+                Video *vid = [[Video alloc] init];
                 vid.videoTitle = [d objectForKey: @"title"];
                 vid.videoDescription = [d objectForKey: @"description"];
                 vid.thumbnailUrl = [d objectForKey:@"thumbnail"];
@@ -49,7 +50,8 @@
 }
 -(void) updateTableData {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData]; });
+        [self.tableView reloadData];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +61,9 @@
 
 -(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    Video *video = [self.videoList objectAtIndex: indexPath.row];
+    VideoCell *vidCell = (VideoCell*)cell;
+    [vidCell updateUI: video];
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,17 +71,21 @@
 }
 
 - (UITableViewCell*) tableView: (UITableView *) tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-
-    return nil;
+    
+    VideoCell *cell = (VideoCell*)[tableView dequeueReusableCellWithIdentifier: @"main"];
+    if (!cell) {
+        cell = [[VideoCell alloc] init ];
+    }
+    
+    return cell;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 0;
+    return self.videoList.count;
 }
 
 
